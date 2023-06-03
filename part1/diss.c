@@ -82,7 +82,7 @@ void disassemble( char *filename ){
 
 FILE *openbfile( char *filename ){
     FILE *fp = fopen(filename,"rb");
-    if ferror(fp){
+    if (ferror(fp)){
         perror( filename );
         exit(EXIT_FAILURE);
     }
@@ -107,7 +107,7 @@ char *add_extension( char *filename ){
 
 FILE *createfile( char* filename ){
     FILE *fp = fopen(filename,"w");
-    if ferror(fp){
+    if (ferror(fp)){
         perror( filename );
         exit(EXIT_FAILURE);
     }
